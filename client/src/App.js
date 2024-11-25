@@ -1,18 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import SignupForm from './SignupForm';
+// ... outros componentes
 
 function App() {
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    fetch('/api/hello')
-      .then(response => response.json())
-      .then(data => setData(data));
-  }, []);
-
   return (
-    <div>
-      {data && <p>{data.message}</p>}
-    </div>
+    <BrowserRouter>
+        <Routes>
+            <Route path="/signup" element={<SignupForm />} />
+            {/* Outras rotas */}
+        </Routes>
+    </BrowserRouter>
   );
 }
 

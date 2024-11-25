@@ -8,7 +8,7 @@ const secret = crypto.randomBytes(32).toString('hex');
 
 // Rota de registro
 router.post('/signup', async (req, res) => {
-    const { username, email, password } = req.body;
+    const { email, password, username } = req.body;
 
     // Validação dos dados (adicione mais validações conforme necessário)
     if (!username || !email || !password) {

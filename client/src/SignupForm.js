@@ -10,7 +10,7 @@ function SignupForm() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post("/api/auth/signup", { email, password, username });
+            const response = await axios.post("http://localhost:3000/api/auth/signup", { email, password, username });
             console.log(response.data);
             // Redirecionar para a tela de login ou exibir uma mensagem de sucesso
         } catch (error) {
@@ -48,4 +48,4 @@ function SignupForm() {
     );
 }
 
-module.exports = SignupForm;
+export default SignupForm;
