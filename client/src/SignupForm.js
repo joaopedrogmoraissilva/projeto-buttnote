@@ -13,6 +13,7 @@ function SignupForm() {
             const response = await axios.post("http://localhost:3000/api/auth/signup", { email, password, username });
             console.log(response.data);
             // Redirecionar para a tela de login ou exibir uma mensagem de sucesso
+            window.location.href = "/login";
         } catch (error) {
             console.error(error);
             setError("Erro ao realizar o cadastro");
